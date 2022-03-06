@@ -1,1 +1,1 @@
-# tyrellcurryio
+# tyrellcurry.io

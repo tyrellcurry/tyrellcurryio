@@ -1,0 +1,23 @@
+{
+  "name": "tyrellcurry.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tyrellcurry/tyrellcurry.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tyrellcurry/tyrellcurry.io/issues"
+  },
+  "homepage": "https://github.com/tyrellcurry/tyrellcurry.io#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.23"
+  }
+}
