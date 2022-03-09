@@ -8,9 +8,54 @@
     <title>Document</title>
   </head>
   <body>
-    <span class="font-bold">Hello</span>
-    <span>Tailwind</span>
-    <span>Testing Testing</span>
+    <main class="px-20 pt-20">
+      <nav class="group hover:cursor-pointer w-8 h-8 absolute top-8 left-8">
+        <div class="w-8 h-1 bg-slate-800 group-hover:bg-gray-600"></div>
+        <div class="w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
+        <div class="w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
+      </nav>
+      <div class="home h-screen w-full inline-flex">
+        <div class="content h-full w-1/2">
+          <div class="text pt-12">
+            <h1 class="text-4xl">Hey there 👋!</h1>
+            <p class="text-2xl w-5/6 mt-6">
+              My name is Tyrell Curry,
+              <br />
+              I am a Front-End Developer based in Vancouver, BC.
+            </p>
+            <div class="tech-stack">
+              <p class="text-2xl mt-12 mb-2">My Tech Stack:</p>
+              <div class="tech-imgs h10 flex">
+                <img src="./images/html.png" alt="" class="h-10" />
+                <img src="./images/css.png" alt="" class="h-10" />
+                <img src="./images/javascript.png" alt="" class="h-10" />
+                <img src="./images/react.png" alt="" class="h-10" />
+                <img
+                  src="./images/visual-studio-code.png"
+                  alt=""
+                  class="h-10"
+                />
+              </div>
+              <div class="btn mt-12">
+                <a href="#">
+                  <button
+                    class="border-solid border-2 border-black py-1 px-2 text-lg"
+                  >
+                    Reach Out To Me
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="h-full w-1/2 bg-zinc-200">
+          <div
+            class="img h-5/6 w-full bg-[url('/images/Tyrell_profile_compressed.png')] bg-cover bg-top"
+          ></div>
+          <div class="home-text"><h2>Home</h2></div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
 
