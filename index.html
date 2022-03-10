@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/output.css" />
+    <link rel="stylesheet" href="/dist/output.css" />
+    <link rel="stylesheet" href="/dist/custom.css" />
     <title>Document</title>
   </head>
   <body>
@@ -14,7 +15,7 @@
         <div class="w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
         <div class="w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
       </nav>
-      <div class="home h-screen w-full inline-flex">
+      <div id="home" class="h-screen w-full inline-flex">
         <div class="content h-full w-1/2">
           <div class="text pt-12">
             <h1 class="text-4xl">Hey there 👋!</h1>
@@ -48,11 +49,54 @@
             </div>
           </div>
         </div>
-        <div class="h-full w-1/2 bg-zinc-200">
+        <div class="h-full w-1/2">
           <div
-            class="img h-5/6 w-full bg-[url('/images/Tyrell_profile_compressed.png')] bg-cover bg-top"
+            class="img h-5/6 w-full bg-[url('/images/Tyrell_profile_compressed-2.png')] bg-cover bg-top"
           ></div>
-          <div class="home-text"><h2>Home</h2></div>
+          <div class="">
+            <h1 class="text-4xl mt-5">About Me 🚀!</h1>
+            <p class="text-2xl w-full mt-5">
+              I build effective front-end web applications utilizing HTML5,
+              CSS3, JavaScript, and React.
+            </p>
+            <p class="text-2xl w-full mt-5">
+              On my days off I enjoy fly fishing, playing music, and spending
+              time with loved ones.
+            </p>
+          </div>
+        </div>
+
+        <!-- <div class="home-text">
+          <h2>Home</h2>
+        </div> -->
+      </div>
+      <div id="about" class="h-screen w-full">
+        <div id="line-about" class="line"></div>
+        <div id="about-content" class="inline-flex h-full w-full">
+          <div id="left-content" class="w-1/2 h-full md:px-10 pt-4">
+            <div class="grid place-content-center">
+              <button
+                class="border-solid border-2 border-black py-1 px-2 text-lg"
+              >
+                Download My CV
+              </button>
+            </div>
+            <div class="socials flex justify-center pt-4">
+              <h2><a href="">github</a></h2>
+              <h2 class="px-2">•</h2>
+              <h2><a href="">linkedin</a></h2>
+              <h2 class="px-2">•</h2>
+              <h2><a href="">instagram</a></h2>
+            </div>
+            <div class="experience text-center pt-3">
+              <h2 class="pb-2">I am experienced in:</h2>
+              <h2>
+                git • tailwind • scrum • sass/less • agile development • test
+                automations • webpack • gsap • ci/cd • nuxt.js • figma
+              </h2>
+            </div>
+          </div>
+          <div id="right-content" class="w-1/2 h-full"></div>
         </div>
       </div>
     </main>
