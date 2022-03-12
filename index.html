@@ -7,26 +7,31 @@
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="stylesheet" href="/dist/custom.css" />
     <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/359536931d.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
   </head>
   <body>
-    <main class="px-20 pt-20">
+    <main class="lg:px-24 md:px-10 pt-20">
       <nav class="group hover:cursor-pointer w-8 h-8 absolute top-8 left-8">
         <div class="w-8 h-1 bg-slate-800 group-hover:bg-gray-600"></div>
         <div class="w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
         <div class="w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
       </nav>
-      <div id="home" class="h-screen w-full inline-flex">
-        <div class="content h-full w-1/2">
+      <div id="home" class="h-full w-full md:inline-flex">
+        <div class="content h-full w-1/2 mb-20">
           <div class="text pt-12">
-            <h1 class="text-4xl">Hey there 👋!</h1>
-            <p class="text-2xl w-5/6 mt-6">
+            <h1 class="text-5xl">Hey there 👋!</h1>
+            <p class="text-4xl w-5/6 mt-6">
               My name is Tyrell Curry,
               <br />
               I am a Front-End Developer based in Vancouver, BC.
             </p>
             <div class="tech-stack">
-              <p class="text-2xl mt-12 mb-2">My Tech Stack:</p>
-              <div class="tech-imgs h10 flex">
+              <p class="text-3xl mt-12 mb-2">My Tech Stack:</p>
+              <div class="tech-imgs h-10 flex">
                 <img src="./images/html.png" alt="" class="h-10" />
                 <img src="./images/css.png" alt="" class="h-10" />
                 <img src="./images/javascript.png" alt="" class="h-10" />
@@ -40,63 +45,56 @@
               <div class="btn mt-12">
                 <a href="#">
                   <button
-                    class="border-solid border-2 border-black py-1 px-2 text-lg"
+                    class="border-solid border-3 border-black py-2 px-3 text-2xl"
                   >
                     Reach Out To Me
                   </button>
                 </a>
               </div>
+              <div class="socials flex mt-8 text-lg">
+                <h2 class="hover:text-slate-600"><a href="">github</a></h2>
+                <h2 class="px-2">•</h2>
+                <h2 class="hover:text-slate-600"><a href="">linkedin</a></h2>
+                <h2 class="px-2">•</h2>
+                <h2 class="hover:text-slate-600"><a href="">instagram</a></h2>
+              </div>
             </div>
           </div>
         </div>
-        <div class="h-full w-1/2">
+        <div class="w-1/2">
           <div
-            class="img h-5/6 w-full bg-[url('/images/Tyrell_profile_compressed-2.png')] bg-cover bg-top"
+            class="bg-[url('/images/Tyrell_profile_compressed-2.png')] bg-cover bg-top h-full"
           ></div>
-          <div class="">
-            <h1 class="text-4xl mt-5">About Me 🚀!</h1>
-            <p class="text-2xl w-full mt-5">
+        </div>
+      </div>
+      <div id="about" class="h-screen w-full mt-20">
+        <div id="about-content" class="h-full w-full">
+          <div class="about-section text-center w-3/4 m-auto">
+            <h1 class="text-5xl">About Me 🚀</h1>
+            <p class="text-3xl w-full">
               I build effective front-end web applications utilizing HTML5,
               CSS3, JavaScript, and React.
             </p>
-            <p class="text-2xl w-full mt-5">
-              On my days off I enjoy fly fishing, playing music, and spending
-              time with loved ones.
+            <p class="text-3xl w-full mt-6">
+              I am experienced in git, tailwind, scrum, sass/less, agile
+              development, test automations, webpack, gsap, ci/cd, and figma.
             </p>
           </div>
-        </div>
-
-        <!-- <div class="home-text">
-          <h2>Home</h2>
-        </div> -->
-      </div>
-      <div id="about" class="h-screen w-full">
-        <div id="line-about" class="line"></div>
-        <div id="about-content" class="inline-flex h-full w-full">
-          <div id="left-content" class="w-1/2 h-full md:px-10 pt-4">
-            <div class="grid place-content-center">
-              <button
-                class="border-solid border-2 border-black py-1 px-2 text-lg"
-              >
-                Download My CV
-              </button>
-            </div>
-            <div class="socials flex justify-center pt-4">
-              <h2><a href="">github</a></h2>
-              <h2 class="px-2">•</h2>
-              <h2><a href="">linkedin</a></h2>
-              <h2 class="px-2">•</h2>
-              <h2><a href="">instagram</a></h2>
-            </div>
-            <div class="experience text-center pt-3">
-              <h2 class="pb-2">I am experienced in:</h2>
-              <h2>
-                git • tailwind • scrum • sass/less • agile development • test
-                automations • webpack • gsap • ci/cd • nuxt.js • figma
-              </h2>
+          <div id="left-content" class="w-full h-full md:px-10">
+            <div class="text-center">
+              <a href="#">
+                <button
+                  class="border-solid border-3 border-black py-2 px-3 text-2xl mt-8"
+                >
+                  Download My CV
+                </button>
+              </a>
+              <h2 class="text-center mt-16 text-2xl">Check out my portfolio</h2>
+              <a href="#">
+                <i class="fa-solid fa-chevron-down text-4xl mt-8"></i>
+              </a>
             </div>
           </div>
-          <div id="right-content" class="w-1/2 h-full"></div>
         </div>
       </div>
     </main>
