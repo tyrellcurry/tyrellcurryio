@@ -1,7 +1,12 @@
 module.exports = {
   content: ['./index.html'],
   theme: {
-    extend: {},
+    extend: {
+      padding: {
+        '1/2': '50%',
+        full: '100%',
+      },
+    },
     fontSize: {
       xs: '.75rem',
       sm: '.875rem',
