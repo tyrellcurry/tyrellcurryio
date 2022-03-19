@@ -6,3 +6,7 @@
 .border-3 {
   border-width: 3px;
 }
+
+.home {
+  height: 80vh;
+}
