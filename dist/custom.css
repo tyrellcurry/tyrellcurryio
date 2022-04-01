@@ -11,4 +11,21 @@
   .home {
     height: 80vh;
   }
+
+  .btn-animation {
+    transition: transform 0.1s ease-in-out;
+  }
+
+  .btn-animation:hover {
+    transform: rotate(-8deg);
+  }
+
+  .grid-animation {
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .grid-animation:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
 }
