@@ -3,6 +3,10 @@
   font-family: 'Poppins', system-ui, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .border-3 {
   border-width: 3px;
 }
@@ -21,11 +25,56 @@
   }
 
   .grid-animation {
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.1s ease-in-out;
   }
 
   .grid-animation:hover {
     opacity: 0.8;
     cursor: pointer;
   }
+}
+
+.bg-port-1,
+.bg-port-2,
+.bg-port-3,
+.bg-port-4,
+.bg-port-5,
+.bg-port-6 {
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-port-1 {
+  background-image: url('../../images/shortly-app.jpeg');
+  background-position: top;
+}
+.bg-port-2 {
+  background-image: url('../../images/entertainment-app.jpeg');
+  background-position: left;
+}
+.bg-port-3 {
+  background-image: url('../../images/github-search.jpeg');
+}
+.bg-port-4 {
+  background-image: url('../../images/advice-app.png');
+}
+.bg-port-5 {
+  background-image: url('../../images/sungs-app.png');
+}
+.bg-port-6 {
+  background-image: url('../../images/yeti-app.png');
+}
+
+/* Menu */
+
+menu {
+  transition: all 0.65s ease-in-out;
+}
+
+.menu-closed {
+  opacity: 0;
+}
+
+.menu-open {
+  opacity: 1;
 }

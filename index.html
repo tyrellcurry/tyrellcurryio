@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
     <link rel="stylesheet" href="/dist/output.css" />
     <link rel="stylesheet" href="/dist/custom.css" />
-    <title>Tyrell Curry | Front-End Developer</title>
+    <title>Tyrell Curry | Front-End Developer | Vancouver, BC</title>
     <script
       src="https://kit.fontawesome.com/359536931d.js"
       crossorigin="anonymous"
@@ -16,11 +16,36 @@
   </head>
   <body>
     <main class="pt-20 md:p-24 md:pb-0">
-      <nav class="group hover:cursor-pointer w-8 h-8 absolute top-8 left-8">
+      <nav
+        class="group hover:cursor-pointer w-8 h-8 absolute top-8 left-8"
+        id="menu-btn"
+      >
         <div class="w-8 h-1 bg-slate-800 group-hover:bg-gray-600"></div>
         <div class="w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
         <div class="w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
       </nav>
+      <menu
+        id="menu-text"
+        class="menu-closed w-full flex justify-center -translate-y-3 md:justify-start md:-translate-y-20 md:mt-3"
+      >
+        <div class="wrapper flex flex-wrap text-xl">
+          <a href="#home" class="pointer">
+            <li class="pr-1 md:hover:text-slate-600">home</li>
+          </a>
+          <p class="pr-1">|</p>
+          <a href="#skills" class="pointer">
+            <li class="pr-1 md:hover:text-slate-600">skills</li>
+          </a>
+          <p class="pr-1">|</p>
+          <a href="#portfolio" class="pointer">
+            <li class="pr-1 md:hover:text-slate-600">portfolio</li>
+          </a>
+          <p class="pr-1">|</p>
+          <a href="#contact" class="pointer">
+            <li class="md:hover:text-slate-600">contact</li>
+          </a>
+        </div>
+      </menu>
       <!-- Home Section -->
       <section class="home md:h-full md:grid md:grid-cols-2">
         <div id="home" class="left-col text-center md:text-left">
@@ -59,11 +84,11 @@
             </div>
           </div>
           <div class="btn pt-10 md:pt-12">
-            <a href="#">
+            <a href="#portfolio">
               <button
                 class="border-solid border-3 py-2 px-3 text-xl shadow-lg btn-animation text-slate-800 border-slate-800"
               >
-                Reach Out To Me
+                Checkout My Portfolio
               </button>
             </a>
           </div>
@@ -105,7 +130,7 @@
       ></div>
       <!-- My Skills Section -->
       <section class="my_skills">
-        <div id="about" class="md:mt-10 md:grid md:grid-cols-2">
+        <div id="skills" class="md:mt-10 md:grid md:grid-cols-2">
           <div
             class="left-col-img bg-[url('/images/myskills.png')] bg-cover bg-top h-full w-full"
             alt="Macbook set up on a desk"
@@ -117,21 +142,27 @@
               <h1 class="text-3xl md:text-4xl lg:text-5xl">My Skills 🚀</h1>
               <p class="text-xl lg:text-2xl pt-4 lg:pt-4">
                 I build effective front-end web applications utilizing HTML5,
-                CSS3, JavaScript, and React.
+                CSS3, JavaScript, React, and Various Front-End
+                Libraries/Frameworks.
               </p>
               <p class="text-xl lg:text-2xl pt-4 lg:pt-6">
-                I am experienced in [insert skills].
+                I am experienced in using React State, Next.js, TailwindCSS,
+                SASS/SCSS, GIT Workflows, Fetch, Axios, Node.js, Mobile First
+                Workflows, and Responsive Design.
               </p>
               <p class="text-xl lg:text-2xl pt-4 lg:pt-6">
-                I would like to learn more about scrum, agile development, and
-                ci/cd.
+                I would like to learn more about Scrum, Agile Development,
+                Vue.js, and CI/CD.
               </p>
               <div class="text-center md:text-left">
-                <a href="#">
+                <a
+                  href="./files/TyrellCurryResumeWebDeveloper.PDF"
+                  target="_blank"
+                >
                   <button
                     class="border-solid border-3 py-2 px-3 text-xl mt-6 shadow-lg btn-animation text-slate-800 border-slate-800"
                   >
-                    Download My CV
+                    View My Resume
                   </button>
                 </a>
               </div>
@@ -144,17 +175,50 @@
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
       ></div>
       <!-- Portfolio Section -->
-      <section class="portfolio max-w-screen-lg mx-auto px-8 md:mt-10 md:pb-16">
+      <section
+        class="portfolio max-w-screen-lg mx-auto px-8 md:mt-10 md:pb-16"
+        id="portfolio"
+      >
         <div class="text-3xl text-center md:text-4xl lg:text-5xl">
           Portfolio 👾
         </div>
         <div class="grid grid-cols-2 md:grid-cols-3 mt-12 shadow-lg">
-          <div class="w-full h-0 pb-full bg-yellow-300 grid-animation"></div>
-          <div class="w-full h-0 pb-full bg-red-300 grid-animation"></div>
-          <div class="w-full h-0 pb-full bg-green-300 grid-animation"></div>
-          <div class="w-full h-0 pb-full bg-indigo-300 grid-animation"></div>
-          <div class="w-full h-0 pb-full bg-orange-300 grid-animation"></div>
-          <div class="w-full h-0 pb-full bg-pink-300 grid-animation"></div>
+          <a
+            href="https://github.com/tyrellcurry/urlShorteningApp#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-1 grid-animation"></div>
+          </a>
+          <a
+            href="https://github.com/tyrellcurry/entertainmentApp#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-2 grid-animation"></div>
+          </a>
+          <a
+            href="https://github.com/tyrellcurry/githubUserSearch#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-3 grid-animation"></div>
+          </a>
+          <a
+            href="https://github.com/tyrellcurry/adviceGenerator#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-4 grid-animation"></div>
+          </a>
+          <a
+            href="https://github.com/tyrellcurry/knockKnockYeti#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-6 grid-animation"></div>
+          </a>
+          <a
+            href="https://github.com/tyrellcurry/sungsChineseRestaurant#readme"
+            target="_blank"
+          >
+            <div class="w-full h-0 pb-full bg-port-5 grid-animation"></div>
+          </a>
         </div>
       </section>
       <!-- Portfolio Section -->
@@ -164,7 +228,7 @@
     </main>
     <main class="">
       <!-- Contact Section -->
-      <section class="contact md:bg-slate-400">
+      <section class="contact md:bg-slate-400" id="contact">
         <div class="contact-grid md:py-14 md:mx-auto md:p-32">
           <div class="contact-text text-center">
             <div class="title text-3xl md:text-4xl">Reach out to me!</div>
@@ -242,6 +306,7 @@
       </section>
       <!-- Footer -->
     </main>
+    <script src="./js/app.js"></script>
   </body>
 </html>
 
