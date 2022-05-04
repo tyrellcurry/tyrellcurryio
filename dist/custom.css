@@ -68,7 +68,7 @@ html {
 /* Menu */
 
 menu {
-  transition: all 0.65s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .menu-closed {
@@ -78,3 +78,34 @@ menu {
 .menu-open {
   opacity: 1;
 }
+
+nav {
+  transition: all 0.25s ease-in-out;
+}
+
+.nav-closed {
+  background-color: white;
+}
+
+.nav-open {
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
+    0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+    0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.burger-open {
+  width: 100%;
+}
+
+.burger-open2 {
+  margin-left: auto;
+}
+
+/* .menu-ul {
+  height: 50vh;
+} */

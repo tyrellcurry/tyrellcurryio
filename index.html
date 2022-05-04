@@ -17,44 +17,50 @@
   <body>
     <main class="pt-20 md:p-24 md:pb-0">
       <nav
-        class="group hover:cursor-pointer w-8 h-8 absolute top-8 left-8"
-        id="menu-btn"
+        class="absolute top-5 left-5 md:top-8 md:left-8 w-11/12 md:w-1/2 flex px-2 py-2 items-center -translate-x-1 -translate-y-1"
+        id="nav"
       >
-        <div class="w-8 h-1 bg-slate-800 group-hover:bg-gray-600"></div>
-        <div class="w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
-        <div class="w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"></div>
+        <button id="menu-btn" class="w-8 h-8 hover:cursor-pointer group">
+          <div class="w-8 h-1 bg-slate-800 group-hover:bg-gray-600"></div>
+          <div
+            class="hamburger-middle w-6 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"
+          ></div>
+          <div
+            class="hamburger-bottom w-4 h-1 bg-slate-800 mt-1 group-hover:bg-gray-600"
+          ></div>
+        </button>
+        <menu id="menu-text" class="w-full menu-closed">
+          <ul class="flex justify-evenly">
+            <li class="md:hover:text-slate-600 text-white">
+              <a href="#home" class="pointer">home</a>
+            </li>
+            <li class="md:hover:text-slate-600 text-white">
+              <a href="#skills" class="pointer">skills</a>
+            </li>
+            <li class="md:hover:text-slate-600 text-white">
+              <a href="#portfolio" class="pointer">portfolio</a>
+            </li>
+            <li class="md:hover:text-slate-600 text-white">
+              <a href="#contact" class="pointer">contact</a>
+            </li>
+          </ul>
+        </menu>
       </nav>
-      <menu
-        id="menu-text"
-        class="menu-closed w-full flex justify-center -translate-y-3 md:justify-start md:-translate-y-20 md:mt-3 px-4 md:px-0"
-      >
-        <div class="wrapper flex flex-wrap text-xl">
-          <a href="#home" class="pointer">
-            <li class="pr-1 md:hover:text-slate-600">home</li>
-          </a>
-          <p class="pr-1">|</p>
-          <a href="#skills" class="pointer">
-            <li class="pr-1 md:hover:text-slate-600">skills</li>
-          </a>
-          <p class="pr-1">|</p>
-          <a href="#portfolio" class="pointer">
-            <li class="pr-1 md:hover:text-slate-600">portfolio</li>
-          </a>
-          <p class="pr-1">|</p>
-          <a href="#contact" class="pointer">
-            <li class="md:hover:text-slate-600">contact</li>
-          </a>
-        </div>
-      </menu>
       <!-- Home Section -->
       <section class="home md:h-full md:grid md:grid-cols-2">
         <div id="home" class="left-col text-center md:text-left">
           <div class="text-intro w-5/6 m-auto md:m-0 md:mt-14">
-            <h1 class="text-3xl md:text-4xl lg:text-5xl">Hey there 👋!</h1>
-            <p class="text-2xl pt-4 lg:text-3xl md:pt-6">
-              My name is Tyrell Curry, I am a Front-End Developer based in
-              Vancouver, BC.
-            </p>
+            <!-- <h1 class="text-3xl md:text-4xl lg:text-5xl"> -->
+            <h1>
+              <span class="text-3xl md:text-4xl lg:text-5xl">
+                Hey there 👋!
+              </span>
+              <br />
+              <span class="block text-2xl pt-4 lg:text-3xl md:pt-6">
+                My name is Tyrell Curry, I am a Front-End Developer based in
+                Vancouver, BC.
+              </span>
+            </h1>
           </div>
           <div class="mobile-img flex justify-center md:hidden pt-4">
             <img
@@ -68,17 +74,17 @@
             <div
               class="tech-imgs h-8 flex justify-center pt-2 md:justify-start"
             >
-              <img src="./images/html.png" alt="HTML icon" class="h-10" />
-              <img src="./images/css.png" alt="CSS icon" class="h-10" />
+              <img src="./images/html.png" alt="HTML" class="h-10" />
+              <img src="./images/css.png" alt="CSS" class="h-10" />
               <img
                 src="./images/javascript.png"
-                alt="JavaScript icon"
+                alt="JavaScript"
                 class="h-10"
               />
-              <img src="./images/react.png" alt="React icon" class="h-10" />
+              <img src="./images/react.png" alt="React" class="h-10" />
               <img
                 src="./images/visual-studio-code.png"
-                alt="VS Code icon"
+                alt="Visual Studio Code"
                 class="h-10"
               />
             </div>
@@ -125,6 +131,7 @@
         </div>
       </section>
       <!-- Home Section -->
+
       <div
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
       ></div>
@@ -226,89 +233,82 @@
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
       ></div>
     </main>
-    <main class="">
-      <!-- Contact Section -->
-      <section class="contact md:bg-slate-200" id="contact">
-        <div class="contact-grid md:py-14 md:mx-auto md:p-32">
-          <div class="contact-text text-center">
-            <div class="title text-3xl md:text-4xl">Reach out to me!</div>
-            <div class="email flex items-center justify-center">
-              <i class="fa-solid fa-envelope text-base"></i>
-              <h2 class="ml-2 text-xl md:text-2xl">tyrellcurryio@gmail.com</h2>
-            </div>
-          </div>
-          <div class="contact-box mt-12">
-            <div
-              class="contact-form bg-slate-200 md:bg-slate-400 py-16 px-10 lg:w-2/3 lg:m-auto shadow-lg"
-            >
-              <div
-                class="contact-title flex justify-center text-2xl md:text-3xl"
-              >
-                Drop me a message 🔥
-              </div>
-              <form
-                action="https://formspree.io/f/xknyzoak"
-                method="POST"
-                class="pt-8 flex flex-col items-center"
-              >
-                <input
-                  type="name"
-                  name="name"
-                  placeholder="name"
-                  class="w-full max-w-md p-4 md:text-xl shadow-lg"
-                  required
-                />
-
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  class="w-full max-w-md mt-4 p-4 md:text-xl shadow-lg"
-                  required
-                />
-
-                <textarea
-                  name="message"
-                  placeholder="message"
-                  class="w-full max-w-md mt-4 p-4 h-full h-28 md:h-36 min-h-1/4 md:text-xl shadow-lg"
-                  required
-                ></textarea>
-
-                <!-- your other form fields go here -->
-                <div
-                  class="btn w-full max-w-md flex justify-center md:justify-start"
-                >
-                  <button
-                    type="submit"
-                    class="border-solid border-3 border-black py-2.5 px-10 text-xl mt-6 shadow-lg btn-animation"
-                  >
-                    Submit
-                  </button>
-                </div>
-              </form>
-            </div>
+    <!-- Contact Section -->
+    <section class="contact md:bg-slate-200" id="contact">
+      <div class="contact-grid md:py-14 md:mx-auto md:p-32">
+        <div class="contact-text text-center">
+          <div class="title text-3xl md:text-4xl">Reach out to me!</div>
+          <div class="email flex items-center justify-center">
+            <i class="fa-solid fa-envelope text-base"></i>
+            <h2 class="ml-2 text-xl md:text-2xl">tyrellcurryio@gmail.com</h2>
           </div>
         </div>
-      </section>
-      <!-- Contact Section -->
+        <div class="contact-box mt-12">
+          <div
+            class="contact-form bg-slate-200 md:bg-slate-400 py-16 px-10 lg:w-2/3 lg:m-auto shadow-lg"
+          >
+            <div class="contact-title flex justify-center text-2xl md:text-3xl">
+              Drop me a message 🔥
+            </div>
+            <form
+              action="https://formspree.io/f/xknyzoak"
+              method="POST"
+              class="pt-8 flex flex-col items-center"
+            >
+              <input
+                type="name"
+                name="name"
+                placeholder="name"
+                class="w-full max-w-md p-4 md:text-xl shadow-lg"
+                required
+              />
 
-      <!-- Footer -->
-      <section class="flex items-center justify-center py-4">
-        <h2 class="text-sm">Designed and developed with</h2>
-        <i class="fa-solid fa-heart text-red-600 px-1"></i>
-        <h2 class="text-sm">
-          by
-          <a href="https://github.com/tyrellcurry" target="_blank">
-            Tyrell Curry
-          </a>
-          .
-        </h2>
-      </section>
-      <!-- Footer -->
-    </main>
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                class="w-full max-w-md mt-4 p-4 md:text-xl shadow-lg"
+                required
+              />
+
+              <textarea
+                name="message"
+                placeholder="message"
+                class="w-full max-w-md mt-4 p-4 h-full h-28 md:h-36 min-h-1/4 md:text-xl shadow-lg"
+                required
+              ></textarea>
+
+              <!-- your other form fields go here -->
+              <div
+                class="btn w-full max-w-md flex justify-center md:justify-start"
+              >
+                <button
+                  type="submit"
+                  class="border-solid border-3 border-black py-2.5 px-10 text-xl mt-6 shadow-lg btn-animation"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+
+    <!-- Footer -->
+    <section class="flex items-center justify-center py-4">
+      <h2 class="text-sm">Designed and developed with</h2>
+      <i class="fa-solid fa-heart text-red-600 px-1"></i>
+      <h2 class="text-sm">
+        by
+        <a href="https://github.com/tyrellcurry" target="_blank">
+          Tyrell Curry
+        </a>
+        .
+      </h2>
+    </section>
+    <!-- Footer -->
     <script src="./js/app.js"></script>
   </body>
 </html>
-
-<!-- https://tailwindcss.com/docs/installation -->
-<!-- npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch -->
