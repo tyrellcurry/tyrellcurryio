@@ -30,7 +30,7 @@
           ></div>
         </button>
         <menu id="menu-text" class="w-full menu-closed">
-          <ul class="flex justify-evenly">
+          <ul class="flex justify-evenly text-md md:text-lg">
             <li class="md:hover:text-slate-600 text-white">
               <a href="#home" class="pointer">home</a>
             </li>
@@ -50,7 +50,6 @@
       <section class="home md:h-full md:grid md:grid-cols-2">
         <div id="home" class="left-col text-center md:text-left">
           <div class="text-intro w-5/6 m-auto md:m-0 md:mt-14">
-            <!-- <h1 class="text-3xl md:text-4xl lg:text-5xl"> -->
             <h1>
               <span class="text-3xl md:text-4xl lg:text-5xl">
                 Hey there 👋!
@@ -70,58 +69,64 @@
             />
           </div>
           <div class="tech-stack pt-4">
-            <p class="text-2xl">My Tech Stack:</p>
-            <div
-              class="tech-imgs h-8 flex justify-center pt-2 md:justify-start"
-            >
-              <img src="./images/html.png" alt="HTML" class="h-10" />
-              <img src="./images/css.png" alt="CSS" class="h-10" />
-              <img
-                src="./images/javascript.png"
-                alt="JavaScript"
-                class="h-10"
-              />
-              <img src="./images/react.png" alt="React" class="h-10" />
-              <img
-                src="./images/visual-studio-code.png"
-                alt="Visual Studio Code"
-                class="h-10"
-              />
-            </div>
+            <h3 class="text-2xl">My Tech Stack:</h3>
+            <ul class="tech-imgs h-8 flex justify-center pt-2 md:justify-start">
+              <li>
+                <img src="./images/html.png" alt="HTML" class="h-10" />
+              </li>
+              <li>
+                <img src="./images/css.png" alt="CSS" class="h-10" />
+              </li>
+              <li>
+                <img
+                  src="./images/javascript.png"
+                  alt="JavaScript"
+                  class="h-10"
+                />
+              </li>
+              <li>
+                <img src="./images/react.png" alt="React" class="h-10" />
+              </li>
+              <li>
+                <img
+                  src="./images/visual-studio-code.png"
+                  alt="Visual Studio Code"
+                  class="h-10"
+                />
+              </li>
+            </ul>
           </div>
           <div class="btn pt-10 md:pt-12">
-            <a href="#portfolio">
-              <button
-                class="border-solid border-3 py-2 px-3 text-xl shadow-lg btn-animation text-slate-800 border-slate-800"
-              >
-                Checkout My Portfolio
-              </button>
-            </a>
+            <button
+              class="border-solid border-3 py-2 px-3 text-xl shadow-lg btn-animation text-slate-800 border-slate-800"
+            >
+              <a href="#portfolio">Checkout My Portfolio</a>
+            </button>
           </div>
-          <div
+          <ul
             class="socials flex text-base justify-center pt-4 md:justify-start md:pt-6"
           >
-            <h2 class="hover:text-slate-600">
+            <li class="hover:text-slate-600">
               <a href="https://github.com/tyrellcurry" target="_blank">
                 github
               </a>
-            </h2>
-            <h2 class="px-2">•</h2>
-            <h2 class="hover:text-slate-600">
+            </li>
+            <span class="px-2">•</span>
+            <li class="hover:text-slate-600">
               <a
                 href="https://www.linkedin.com/in/tyrellcurry/"
                 target="_blank"
               >
                 linkedin
               </a>
-            </h2>
-            <h2 class="px-2">•</h2>
-            <h2 class="hover:text-slate-600">
+            </li>
+            <span class="px-2">•</span>
+            <li class="hover:text-slate-600">
               <a href="https://twitter.com/Tyrell_io" target="_blank">
                 twitter
               </a>
-            </h2>
-          </div>
+            </li>
+          </ul>
         </div>
         <div class="right-col">
           <div
@@ -132,9 +137,9 @@
       </section>
       <!-- Home Section -->
 
-      <div
+      <hr
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
-      ></div>
+      />
       <!-- My Skills Section -->
       <section class="my_skills">
         <div id="skills" class="md:mt-10 md:grid md:grid-cols-2">
@@ -146,7 +151,7 @@
             <div
               class="about-section text-center m-auto md:m-0 md:ml-auto w-5/6 md:text-left"
             >
-              <h1 class="text-3xl md:text-4xl lg:text-5xl">My Skills 🚀</h1>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl">My Skills 🚀</h2>
               <p class="text-xl lg:text-2xl pt-4 lg:pt-4">
                 I build effective front-end web applications utilizing HTML5,
                 CSS3, JavaScript, React, and Various Front-End
@@ -162,119 +167,166 @@
                 Vue.js, and CI/CD.
               </p>
               <div class="text-center md:text-left">
-                <a
-                  href="./files/TyrellCurryResumeWebDeveloper.PDF"
-                  target="_blank"
+                <button
+                  class="border-solid border-3 py-2 px-3 text-xl mt-6 shadow-lg btn-animation text-slate-800 border-slate-800"
                 >
-                  <button
-                    class="border-solid border-3 py-2 px-3 text-xl mt-6 shadow-lg btn-animation text-slate-800 border-slate-800"
+                  <a
+                    href="./files/TyrellCurryResumeWebDeveloper.PDF"
+                    target="_blank"
                   >
                     View My Resume
-                  </button>
-                </a>
+                  </a>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
       <!-- My Skills Section -->
-      <div
+      <hr
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
-      ></div>
+      />
       <!-- Portfolio Section -->
       <section
         class="portfolio max-w-screen-lg mx-auto px-8 md:mt-10 md:pb-16"
         id="portfolio"
       >
-        <div class="text-3xl text-center md:text-4xl lg:text-5xl">
+        <h2 class="text-3xl text-center md:text-4xl lg:text-5xl">
           Portfolio 👾
-        </div>
+        </h2>
         <div class="grid grid-cols-2 md:grid-cols-3 mt-12 shadow-lg">
-          <a
-            href="https://github.com/tyrellcurry/urlShorteningApp#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-1 grid-animation"></div>
-          </a>
-          <a
-            href="https://github.com/tyrellcurry/entertainmentApp#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-2 grid-animation"></div>
-          </a>
-          <a
-            href="https://github.com/tyrellcurry/githubUserSearch#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-3 grid-animation"></div>
-          </a>
-          <a
-            href="https://github.com/tyrellcurry/adviceGenerator#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-4 grid-animation"></div>
-          </a>
-          <a
-            href="https://github.com/tyrellcurry/knockKnockYeti#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-6 grid-animation"></div>
-          </a>
-          <a
-            href="https://github.com/tyrellcurry/sungsChineseRestaurant#readme"
-            target="_blank"
-          >
-            <div class="w-full h-0 pb-full bg-port-5 grid-animation"></div>
-          </a>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/urlShorteningApp#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/shortly-sq.png"
+                alt="URL shortening app portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/entertainmentApp#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/entertainment-sq.png"
+                alt="Entertainment app portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/githubUserSearch#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/github-app-sq.png"
+                alt="Github user search app portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/adviceGenerator#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/advice-sq.png"
+                alt="Advice generator portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/knockKnockYeti#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/yeti-sq.png"
+                alt="Interactive Yeti browser game portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
+          <div class="w-full grid-animation">
+            <a
+              href="https://github.com/tyrellcurry/sungsChineseRestaurant#readme"
+              target="_blank"
+            >
+              <img
+                src="./images/sungs-sq.png"
+                alt="Sung's Chinese Restaurant portfolio piece"
+                srcset=""
+                class="object-cover block w-full h-full"
+              />
+            </a>
+          </div>
         </div>
       </section>
       <!-- Portfolio Section -->
-      <div
+      <hr
         class="line-break-mobile h-0.5 w-5/6 bg-slate-800 m-auto mt-12 mb-10 md:hidden"
-      ></div>
+      />
     </main>
     <!-- Contact Section -->
     <section class="contact md:bg-slate-200" id="contact">
       <div class="contact-grid md:py-14 md:mx-auto md:p-32">
         <div class="contact-text text-center">
-          <div class="title text-3xl md:text-4xl">Reach out to me!</div>
+          <h2 class="title text-3xl md:text-4xl">Reach out to me!</h2>
           <div class="email flex items-center justify-center">
             <i class="fa-solid fa-envelope text-base"></i>
-            <h2 class="ml-2 text-xl md:text-2xl">tyrellcurryio@gmail.com</h2>
+            <p class="ml-2 text-xl md:text-2xl">
+              <a href="mailto: tyrellcurryio@gmail.com" target="_blank">
+                tyrellcurryio@gmail.com
+              </a>
+            </p>
           </div>
         </div>
         <div class="contact-box mt-12">
           <div
             class="contact-form bg-slate-200 md:bg-slate-400 py-16 px-10 lg:w-2/3 lg:m-auto shadow-lg"
           >
-            <div class="contact-title flex justify-center text-2xl md:text-3xl">
+            <h3 class="contact-title flex justify-center text-2xl md:text-3xl">
               Drop me a message 🔥
-            </div>
+            </h3>
             <form
               action="https://formspree.io/f/xknyzoak"
               method="POST"
               class="pt-8 flex flex-col items-center"
             >
+              <label for="name"></label>
               <input
                 type="name"
                 name="name"
                 placeholder="name"
-                class="w-full max-w-md p-4 md:text-xl shadow-lg"
+                class="w-full max-w-md p-4 md:text-xl shadow-lg input"
                 required
               />
-
+              <label for="email"></label>
               <input
                 type="email"
                 name="email"
                 placeholder="email"
-                class="w-full max-w-md mt-4 p-4 md:text-xl shadow-lg"
+                class="w-full max-w-md mt-4 p-4 md:text-xl shadow-lg input"
                 required
               />
-
+              <label for="message"></label>
               <textarea
                 name="message"
                 placeholder="message"
-                class="w-full max-w-md mt-4 p-4 h-full h-28 md:h-36 min-h-1/4 md:text-xl shadow-lg"
+                class="w-full max-w-md mt-4 p-4 h-28 md:h-36 min-h-1/4 md:text-xl shadow-lg input"
                 required
               ></textarea>
 
@@ -284,7 +336,7 @@
               >
                 <button
                   type="submit"
-                  class="border-solid border-3 border-black py-2.5 px-10 text-xl mt-6 shadow-lg btn-animation"
+                  class="border-solid border-3 border-black py-2.5 px-10 text-xl mt-6 shadow-lg btn-animation2"
                 >
                   Submit
                 </button>
@@ -297,17 +349,17 @@
     <!-- Contact Section -->
 
     <!-- Footer -->
-    <section class="flex items-center justify-center py-4">
-      <h2 class="text-sm">Designed and developed with</h2>
+    <footer class="flex items-center justify-center py-4">
+      <p class="text-sm">Designed and developed with</p>
       <i class="fa-solid fa-heart text-red-600 px-1"></i>
-      <h2 class="text-sm">
+      <p class="text-sm">
         by
         <a href="https://github.com/tyrellcurry" target="_blank">
           Tyrell Curry
         </a>
         .
-      </h2>
-    </section>
+      </p>
+    </footer>
     <!-- Footer -->
     <script src="./js/app.js"></script>
   </body>

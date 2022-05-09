@@ -17,11 +17,24 @@ html {
   }
 
   .btn-animation {
-    transition: transform 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
   }
 
   .btn-animation:hover {
-    transform: rotate(-8deg);
+    --tw-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.4),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+      0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+      var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    background-color: rgb(71 85 105 / var(--tw-text-opacity));
+    border-color: rgb(71 85 105 / var(--tw-text-opacity));
+    color: white;
+  }
+
+  .btn-animation2:hover {
+    color: white;
+    border-color: white;
   }
 
   .grid-animation {
@@ -32,37 +45,6 @@ html {
     opacity: 0.8;
     cursor: pointer;
   }
-}
-
-.bg-port-1,
-.bg-port-2,
-.bg-port-3,
-.bg-port-4,
-.bg-port-5,
-.bg-port-6 {
-  background-position: center;
-  background-size: cover;
-}
-
-.bg-port-1 {
-  background-image: url('../../images/shortly-app.jpeg');
-  background-position: top;
-}
-.bg-port-2 {
-  background-image: url('../../images/entertainment-app.jpeg');
-  background-position: left;
-}
-.bg-port-3 {
-  background-image: url('../../images/github-search.jpeg');
-}
-.bg-port-4 {
-  background-image: url('../../images/advice-app.png');
-}
-.bg-port-5 {
-  background-image: url('../../images/sungs-app.png');
-}
-.bg-port-6 {
-  background-image: url('../../images/yeti-app.png');
 }
 
 /* Menu */
@@ -80,7 +62,7 @@ menu {
 }
 
 nav {
-  transition: all 0.25s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .nav-closed {
@@ -109,3 +91,8 @@ nav {
 /* .menu-ul {
   height: 50vh;
 } */
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.175rem rgb(30 41 59 / var(--tw-bg-opacity));
+}

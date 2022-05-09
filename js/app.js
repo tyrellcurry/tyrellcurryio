@@ -14,7 +14,7 @@ menuBtn.addEventListener('click', () => {
       nav.classList.add('nav-open'),
       setTimeout(function () {
         menuText.classList.add('menu-open');
-      }, 250),
+      }, 400),
       (menuOpen = true))
     : (menuText.classList.remove('menu-open'),
       hamburgerOne.classList.remove('burger-open'),
@@ -22,7 +22,7 @@ menuBtn.addEventListener('click', () => {
       setTimeout(function () {
         menuText.style.display = 'none';
         nav.classList.remove('nav-open');
-      }, 250),
+      }, 200),
       (menuOpen = false));
 });
 
