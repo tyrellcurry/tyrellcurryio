@@ -7,9 +7,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Button Borders */
 .border-3 {
   border-width: 3px;
 }
+
+/* Desktop */
 
 @media (min-width: 768px) {
   .home {
@@ -63,6 +66,7 @@ menu {
 
 nav {
   transition: all 0.4s ease-in-out;
+  transition-property: background-color, box-shadow;
 }
 
 .nav-closed {
@@ -88,9 +92,7 @@ nav {
   margin-left: auto;
 }
 
-/* .menu-ul {
-  height: 50vh;
-} */
+/* Contact Form Input Borders */
 
 .input:focus {
   outline: none;
