@@ -16,7 +16,7 @@ html {
 
 @media (min-width: 768px) {
   .home {
-    height: 80vh;
+    height: 100vh;
   }
 
   .btn-animation {
