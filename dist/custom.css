@@ -15,9 +15,6 @@ html {
 /* Desktop */
 
 @media (min-width: 768px) {
-  .home {
-    height: 100vh;
-  }
 
   .btn-animation {
     transition: all 0.1s ease-in-out;
