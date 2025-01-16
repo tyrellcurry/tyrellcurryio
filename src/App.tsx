@@ -1,12 +1,7 @@
-import { Button } from "@mantine/core";
+import AppShellLayout from "./components/AppShellLayout/AppShellLayout";
 
 function App() {
-  return (
-    <>
-      <h1>Hello World</h1>
-      <Button>test</Button>
-    </>
-  );
+  return <AppShellLayout>Hello world</AppShellLayout>;
 }
 
 export default App;
