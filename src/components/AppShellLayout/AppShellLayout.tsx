@@ -1,5 +1,6 @@
-import { AppShell, Burger, Group, Skeleton, ScrollArea } from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
+import { AppShell, Burger, Group, Skeleton, ScrollArea } from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import DarkModeToggle from '../Button/DarkModeToggle/DarkModeToggle';
 interface AppShellLayoutProps {
   children: React.ReactNode;
 }
@@ -12,7 +13,7 @@ export default function AppShellLayout({ children }: AppShellLayoutProps) {
       header={{ height: 60 }}
       navbar={{
         width: 300,
-        breakpoint: "sm",
+        breakpoint: 'sm',
         collapsed: { mobile: !navOpened, desktop: !navOpened },
       }}
       padding="md"
@@ -20,6 +21,7 @@ export default function AppShellLayout({ children }: AppShellLayoutProps) {
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={navOpened} onClick={toggleNav} size="sm" />
+          <DarkModeToggle />
         </Group>
       </AppShell.Header>
       <AppShell.Navbar p="md">
@@ -32,9 +34,7 @@ export default function AppShellLayout({ children }: AppShellLayoutProps) {
               <Skeleton key={index} h={28} mt="sm" animate={false} />
             ))}
         </AppShell.Section>
-        <AppShell.Section>
-          Navbar footer – always at the bottom
-        </AppShell.Section>
+        <AppShell.Section>Navbar footer – always at the bottom</AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
