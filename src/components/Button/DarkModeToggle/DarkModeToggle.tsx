@@ -3,7 +3,7 @@ import { IconSun, IconMoon } from '@tabler/icons-react';
 import cx from 'clsx';
 import classes from './DarkModeToggle.module.css';
 
-export default function DarkModeToggle() {
+const DarkModeToggle = () => {
   const { setColorScheme } = useMantineColorScheme();
   const computedColorScheme = useComputedColorScheme('light', {
     getInitialValueInEffect: true,
@@ -20,4 +20,6 @@ export default function DarkModeToggle() {
       <IconMoon className={cx(classes.icon, classes.dark)} stroke={1.5} />
     </ActionIcon>
   );
-}
+};
+
+export default DarkModeToggle;

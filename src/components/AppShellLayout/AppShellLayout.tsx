@@ -1,14 +1,13 @@
 import { AppShell, Burger, Group, Skeleton, ScrollArea, Button, Flex } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import DarkModeToggle from '../Button/DarkModeToggle/DarkModeToggle';
-import classes from './AppShellLayout.module.css';
 import SocialButton from '../Button/SocialButton/SocialButton';
 import { IconDownload } from '@tabler/icons-react';
 interface AppShellLayoutProps {
   children: React.ReactNode;
 }
 
-export default function AppShellLayout({ children }: AppShellLayoutProps) {
+const AppShellLayout = ({ children }: AppShellLayoutProps) => {
   const [navOpened, { toggle: toggleNav }] = useDisclosure();
 
   return (
@@ -52,4 +51,6 @@ export default function AppShellLayout({ children }: AppShellLayoutProps) {
       <AppShell.Main>{children}</AppShell.Main>
     </AppShell>
   );
-}
+};
+
+export default AppShellLayout;

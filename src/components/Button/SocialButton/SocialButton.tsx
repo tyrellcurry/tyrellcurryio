@@ -4,7 +4,7 @@ interface SocialButtonProps {
   platform: 'Github' | 'Linkedin';
 }
 
-export default function SocialButton({ platform }: SocialButtonProps) {
+const SocialButton = ({ platform }: SocialButtonProps) => {
   switch (platform) {
     case 'Github':
       return (
@@ -33,4 +33,6 @@ export default function SocialButton({ platform }: SocialButtonProps) {
     default:
       null;
   }
-}
+};
+
+export default SocialButton;
