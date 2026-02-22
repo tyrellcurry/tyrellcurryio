@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #1d2021;
+  --color-secondary: #fbf1c7;
+  --color-tertiary: #fb4934;
+  --color-quaternary: #458588;
+  --color-quinary: #fabd2f;
+}
+
+:root {
+  font-family: "Google Sans Code", monospace, sans-serif;
+  font-optical-sizing: auto;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  @apply bg-primary text-secondary p-10;
+}

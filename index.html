@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tyrell Curry</title>
+  </head>
+  <body>
+    <div class="flex items-start justify-between">
+      <h1 class="text-5xl md:text-6xl text-secondary font-medium">
+        Hi, I'm Tyrell
+      </h1>
+      <div class="flex items-start gap-2 md:gap-4">
+        <a
+          class="block w-fit"
+          href="https://github.com/tyrellcurry"
+          target="_blank"
+        >
+          <div
+            class="min-h-12 min-w-12 w-auto bg-quaternary hover:bg-quinary transition-colors duration-100"
+            style="
+              -webkit-mask: url(/assets/github.svg) no-repeat center;
+              mask: url(/assets/github.svg) no-repeat center;
+              mask-size: contain;
+            "
+          ></div>
+        </a>
+        <a
+          class="block w-fit"
+          href="https://www.linkedin.com/in/tyrellcurry/"
+          target="_blank"
+        >
+          <div
+            class="min-h-12 min-w-12 w-auto bg-quaternary hover:bg-quinary transition-colors duration-100"
+            style="
+              -webkit-mask: url(/assets/linkedin.svg) no-repeat center;
+              mask: url(/assets/linkedin.svg) no-repeat center;
+              mask-size: contain;
+            "
+          ></div>
+        </a>
+      </div>
+    </div>
+    <div class="md:pl-6 mt-6">
+      <h2 class="text-xl md:text-4xl text-secondary">
+        I'm a <span class="text-quinary">Software Engineer</span> and the
+        <span class="text-quinary">Founder </span> of
+        <a
+          class="text-tertiary underline hover:text-quaternary duration-100"
+          href="https://innovativefoxes.com"
+          target="_blank"
+          >Innovative Foxes</a
+        >.
+      </h2>
+      <h3 class="text-xl md:text-3xl mt-6">
+        Located in beautiful
+        <span class="text-quinary">Vancouver, BC, Canada</span>.
+      </h3>
+      <div class="md:pl-6">
+        <h4 class="text-lg md:text-2xl mt-6">
+          Latest posts from my
+          <a
+            class="text-tertiary underline hover:text-quaternary duration-100"
+            href="/blog"
+            >Blog</a
+          >:
+        </h4>
+        <ul class="pl-10 list-disc" id="blog_posts"></ul>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
