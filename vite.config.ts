@@ -14,4 +14,9 @@ export default defineConfig({
       input: htmlFiles,
     },
   },
+server: {
+    proxy: {
+      "/api": "http://localhost:8081",
+    },
+  },
 });
