@@ -1,3 +1,5 @@
+import { renderTrafficChart, renderUptimeBadge } from "./charts";
+
 const fetchBlogPosts = () => {
   return [];
 };
@@ -12,4 +14,6 @@ const renderBlogPostLinks = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   renderBlogPostLinks();
+  renderTrafficChart();
+  renderUptimeBadge();
 });

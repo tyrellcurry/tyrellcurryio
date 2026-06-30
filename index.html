@@ -8,10 +8,13 @@
     <title>Tyrell Curry</title>
   </head>
   <body>
-    <div class="flex items-start justify-between">
-      <h1 class="text-5xl md:text-6xl text-secondary font-medium">
-        Hi, I'm Tyrell
-      </h1>
+    <div class="flex items-start justify-between mb-4">
+      <span
+        id="uptime-badge"
+        class="text-xs font-medium px-3 py-1 rounded-full bg-green-600 text-primary"
+      >
+        Server Uptime: —
+      </span>
       <div class="flex items-start gap-2 md:gap-4">
         <a
           class="block w-fit"
@@ -43,6 +46,9 @@
         </a>
       </div>
     </div>
+    <h1 class="text-5xl md:text-6xl text-secondary font-medium mb-6">
+      Hi, I'm Tyrell
+    </h1>
     <div class="md:pl-6 mt-6">
       <h2 class="text-xl md:text-4xl text-secondary">
         I'm a <span class="text-quinary">Software Engineer</span> and the
@@ -58,7 +64,7 @@
         Located in beautiful
         <span class="text-quinary">Vancouver, BC, Canada</span>.
       </h3>
-      <div class="md:pl-6">
+      <div class="md:pl-6 hidden">
         <h4 class="text-lg md:text-2xl mt-6">
           Latest posts from my
           <a
@@ -68,6 +74,57 @@
           >:
         </h4>
         <ul class="pl-10 list-disc" id="blog_posts"></ul>
+      </div>
+    </div>
+    <div class="mt-12">
+      <div class="flex flex-col md:flex-row gap-6 items-start">
+        <img
+          src="/assets/raspberry-pi.jpg"
+          alt="Raspberry Pi 5"
+          class="w-full md:w-[520px] rounded-lg object-cover flex-shrink-0"
+        />
+        <div class="flex flex-col gap-6 w-full items-start">
+          <div>
+            <h2 class="text-2xl md:text-3xl text-secondary font-medium mb-3">
+              Hosted on a
+              <span class="text-tertiary">Raspberry Pi 5</span>
+            </h2>
+            <p
+              class="text-lg md:text-xl text-secondary opacity-80 leading-relaxed"
+            >
+              This site is self-hosted on a
+              <span class="text-tertiary">Raspberry Pi 5</span> at my home in
+              Richmond, BC, Canada. The server is written in
+              <span class="text-quinary">Go</span> which contains a static file
+              server and a separate metrics service both sharing a
+              <span class="text-quinary">SQLite</span> database. A
+              <span class="text-quinary">Caddy</span> reverse proxy handles
+              HTTPS via <span class="text-quinary">Let's Encrypt</span>, and
+              <span class="text-quinary">DDNS</span> keeps the domain pointed at
+              my home IP. Deployments are fully automated: pushing to
+              <span class="text-quinary">GitHub</span> triggers a CI/CD pipeline
+              that cross-compiles the
+              <span class="text-quinary">Go</span> binaries for
+              <span class="text-quinary">ARM64</span> and ships them to the Pi
+              over a private <span class="text-quinary">Tailscale</span> tunnel.
+            </p>
+          </div>
+          <div class="inline-block bg-white/5 rounded-xl p-4">
+            <h3 class="text-lg md:text-xl text-secondary font-medium mb-4">
+              Live Pi Traffic (Last 7 Days)
+            </h3>
+            <div class="w-full">
+              <canvas id="traffic-chart"></canvas>
+            </div>
+            <p class="text-md text-secondary opacity-60 mt-3 leading-relaxed">
+              <span class="text-indigo-300">Requests</span> are all HTTP hits to
+              the server. <span class="text-quinary">Visits</span> count only
+              page loads (extensionless routes and <code>.html</code> paths).
+              Both are recorded by the Go web server on every request and stored
+              in a SQLite database on the Pi.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
     <script type="module" src="/src/main.ts"></script>
