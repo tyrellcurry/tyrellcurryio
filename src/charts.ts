@@ -29,6 +29,11 @@ export const renderTrafficChart = async () => {
   const canvas = document.getElementById("traffic-chart") as HTMLCanvasElement;
   if (!canvas) return;
 
+  const totalRequestsEl = document.getElementById("stat-total-requests");
+  const totalVisitsEl = document.getElementById("stat-total-visits");
+  if (totalRequestsEl) totalRequestsEl.textContent = stats.reduce((sum, s) => sum + s.total_requests, 0).toLocaleString();
+  if (totalVisitsEl) totalVisitsEl.textContent = stats.reduce((sum, s) => sum + s.total_visits, 0).toLocaleString();
+
   new Chart(canvas, {
     type: "line",
     data: {
