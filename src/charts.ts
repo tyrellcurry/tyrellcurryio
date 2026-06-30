@@ -59,6 +59,9 @@ export const renderTrafficChart = async () => {
     },
     options: {
       responsive: true,
+      plugins: {
+        legend: { display: false },
+      },
       scales: {
         y: { beginAtZero: true },
       },
