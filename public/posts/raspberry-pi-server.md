@@ -63,3 +63,10 @@ The whole deploy takes under a minute.
 ## What's Next
 
 There's a lot I want to add. More detailed metrics, a proper blog section (you're reading it), maybe some more pages. But the foundation feels solid, and having it running from my home is a big win for me.
+
+---
+
+## Source Code
+
+- [tyrellcurryio](https://github.com/tyrellcurry/tyrellcurryio) (Vite + TypeScript frontend)
+- [pi-portfolio-server](https://github.com/tyrellcurry/pi-portfolio-server) (Go web server and metrics service)
