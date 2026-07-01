@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+.prose {
+  color: var(--color-secondary);
+  line-height: 1.75;
+}
+
+.prose h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-bottom: 0.25rem;
+  line-height: 1.2;
+}
+
+.prose h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-secondary);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose p {
+  margin-bottom: 1.25rem;
+  opacity: 0.9;
+}
+
+.prose em {
+  color: var(--color-secondary);
+  opacity: 0.55;
+  font-style: italic;
+}
+
+.prose strong {
+  color: var(--color-quinary);
+  font-weight: 600;
+}
+
+.prose a {
+  color: var(--color-tertiary);
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: var(--color-quaternary);
+}
+
+.prose code {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.875em;
+  color: var(--color-quinary);
+}
+
+.prose pre {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875em;
+  color: var(--color-secondary);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose ul {
+  list-style: disc;
+}
+
+.prose ol {
+  list-style: decimal;
+}
+
+.prose li {
+  margin-bottom: 0.4rem;
+  opacity: 0.9;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+.prose blockquote {
+  border-left: 3px solid var(--color-quaternary);
+  padding-left: 1rem;
+  color: var(--color-secondary);
+  opacity: 0.7;
+  margin: 1.5rem 0;
+}
