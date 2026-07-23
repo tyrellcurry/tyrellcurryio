@@ -20,8 +20,10 @@ export const renderUptimeBadge = async () => {
   const uptime: number = stats.uptime_percent;
 
   badge.textContent = `Server Uptime: ${uptime.toFixed(2)}%`;
-  badge.classList.remove("bg-green-600");
-  badge.classList.add(uptime >= 99 ? "bg-green-600" : "bg-tertiary");
+  badge.classList.remove("bg-red-600", "bg-orange-500", "bg-green-600");
+  const color =
+    uptime < 50 ? "bg-red-600" : uptime < 100 ? "bg-orange-500" : "bg-green-600";
+  badge.classList.add(color);
 };
 
 export const renderTrafficChart = async () => {
