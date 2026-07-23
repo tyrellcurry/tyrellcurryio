@@ -4,9 +4,9 @@ _Published July 21st, 2026_
 
 ---
 
-I run [i3](https://i3wm.org/) with **urxvt** as my terminal. It is fast, light, and it stays out of my way, which is exactly what I want. The trouble started when I set up Neovim with a Nerd Font config. My file tree was full of little `[]` boxes where icons were supposed to be, and every emoji in the terminal showed up as either a hollow square or nothing at all.
+I run [i3](https://i3wm.org/) with **urxvt** as my terminal. It is fast, light, and very fun as a hobby env. However I noticed when I set up Neovim with a Nerd Font config that my file tree was full of little `[]` boxes where icons were supposed to be, and any emoji usage in the terminal showed up as a hollow square.
 
-I went down a real rabbit hole fixing this. It turned out to be two separate problems with two separate fixes, and the second one meant building urxvt from source. Here is the whole thing from start to finish so you can follow along and get set up.
+It turned out to be two separate problems with two separate fixes, and the second one meant building urxvt from source. Here is the whole thing from start to finish so you can follow along and get set up.
 
 Everything below is on **Debian 13 (trixie)**, but the approach carries over to any distro.
 
