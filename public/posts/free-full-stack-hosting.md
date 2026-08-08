@@ -1,62 +1,86 @@
-# I Hosted a Full-Stack App for Free on Vercel and My Raspberry Pi
+# Hosting a Full-Stack App for Free on Vercel and My Raspberry Pi
 
 _Published August 8th, 2026_
 
 ---
 
-I built [invoiceApp](https://github.com/tyrellcurry/invoiceApp), an invoicing app, as a showcase project: a React frontend, a Go API, Postgres, real Google sign-in. Once it worked locally I wanted it actually live, and I wanted that to cost nothing.
+I built [invoiceApp](https://github.com/tyrellcurry/invoiceApp), a mock invoicing app as a portfolio project. It is built with a React frontend following the Bulletproof React architecture, a Go API, a Postgres DB, and Google sign-in support. I decided to host the backend on my Raspberry Pi and the frontend on Vercel with a free domain name.
 
-The Pi from my [last post](/blog/raspberry-pi-server) already runs one production site for free. This time I split the app across two places instead of cramming everything onto the Pi: the frontend on Vercel, the backend and database on the Pi.
+The Pi from my [last post](/blog/raspberry-pi-server) already runs this site for free (other than my electricity and wifi bill 🤣).
 
-Here's why, and what actually went wrong getting there.
+You can view the live invoice site [here](https://invoice-app-tyrell-curry.vercel.app) ⚡️.
 
----
-
-## Why Split It
-
-Vercel's free tier builds and deploys a static frontend on every push, with its own CDN, for nothing. There's no reason to serve static files from my home network when a purpose-built platform will do it for free and faster.
-
-The backend is a different story. It needs a real Postgres database, and a database isn't something you get for free on Vercel without hitting limits fast. The Pi already had spare capacity, and I already had a working deploy pipeline for it from the portfolio site, so the backend went there instead.
-
-The two halves talk over plain HTTPS, CORS on the Go side, nothing fancier than that.
+Here's how the whole thing is wired together.
 
 ---
 
-## Reusing What Already Worked
+## The Split
 
-I didn't want to invent new infrastructure. The portfolio site's deploy pipeline was already proven: GitHub Actions joins my **Tailscale** network, SSHes into the Pi, and restarts a **systemd** service. I copied that pattern almost exactly for invoiceApp's backend, cross-compile for `linux/arm64`, deploy over Tailscale, restart the service.
+**Vercel** builds and serves the frontend. The free tier comes with a global CDN, automatic deploys on every push, and a free `.vercel.app` domain, which is hard to beat for static files.
 
-**Caddy** was already sitting in front of the Pi handling HTTPS for the portfolio site, so the new API just needed one more block in the same Caddyfile, a new subdomain, and it got a Let's Encrypt cert automatically like everything else there.
-
-Postgres was the one new piece, it runs in a dedicated Docker container on the Pi, bound to localhost only, so it's never reachable from outside the machine.
+The backend is where paid plans usually come into play because it needs a real **Postgres** database. However, my Pi already had the capacity and a deploy pipeline from the this site, so it was relatively simple for hosting the API and the database there.
 
 ---
 
-## What Actually Went Wrong
+## The Backend on the Pi
 
-None of this went smoothly the first time. Worth writing down since I'll definitely make these mistakes again otherwise:
+**Caddy** was already handling HTTPS for this site, so exposing the API took one new block in the same Caddyfile, plus one DNS record in Cloudflare pointing the new subdomain at my home IP:
 
-**Port collision.** I picked `8081` for the new API without checking what else was already running on the Pi. `pi-metrics`, from the portfolio site, was already there. Caddy just silently proxied to nothing until I noticed.
+```
+invoices-api.tyrellcurry.io {
+    reverse_proxy localhost:8082
+}
+```
 
-**A stale Postgres password.** Postgres only applies `POSTGRES_PASSWORD` the very first time it initializes an empty data volume. I generated a real password, dropped it into `.env`, restarted, and got `password authentication failed` because the container had already initialized with an earlier placeholder value and never re-read the new one. The fix was wiping the volume and letting it reinitialize clean, an option only because there was no real data in it yet.
+Caddy grabs a Let's Encrypt cert for the new subdomain automatically, the same way it does for this site.
 
-**A domain name collision I didn't expect.** Vercel's `*.vercel.app` subdomains are global, not scoped to your account. I assumed my project's name would give me a clean, predictable URL and wrote it into a config file without checking. It turned out to already belong to someone else's completely unrelated Nuxt project. Lesson: verify by content, not by HTTP status code, a `200` just means *something* answered.
+**The Go API** is a single binary in `/opt/invoiceapp`, running as a **systemd** unit so it survives reboots and restarts itself if it crashes. It reads its config (database credentials, Google OAuth keys, the allowed CORS origin) from an env file next to it.
 
-**A blank page on every route but the homepage.** The app uses client-side routing, so a static host needs to fall back to `index.html` for every path, or a direct link to `/invoices/abc` 404s. Vercel needs its Root Directory setting pointed at the actual app folder for its `vercel.json` rewrite rule to even be read in the first place, easy to miss in a repo with more than one project in it.
-
-Every one of these was a five-minute fix once actually found. Finding them was the whole job.
+**Postgres** runs in a **Docker** container with its port bound to `127.0.0.1` only, so the database is never reachable from outside the Pi. Only the Go API, sitting on the same machine, can talk to it.
 
 ---
 
-## Where It Landed
+## The Frontend on Vercel
 
-The frontend deploys automatically on every push, Vercel's own GitHub integration, no workflow to maintain. The backend deploys the same way the portfolio site always has, a GitHub Actions run that never touches my machine directly. Sign-in is real Google OAuth, backed by sessions in Postgres, not a token the frontend just trusts.
+Vercel connects to the GitHub repo and handles serving the frontend files. Since the repo holds both halves of the app, the project's **Root Directory** is set to `frontend/` so Vercel only builds and deploys that folder.
 
-Total added hosting cost: zero. The Pi was already paid for and already running, and Vercel's free tier covers everything the frontend needs.
+Two settings that make it work:
+
+1. `VITE_API_URL` is set to the API's URL in Vercel's environment variables. Vite bakes it into the JS bundle at build time, which is how the deployed frontend knows where the backend lives.
+2. A `vercel.json` rewrite sends every path to `index.html`, because routing happens client-side in React. Without it, loading `/invoices/abc` directly would 404 at Vercel's edge before the app ever runs:
+
+```json
+{
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+```
+
+---
+
+## How the Two Halves Talk
+
+There is no proxy or middleware between them. The browser loads the app from Vercel, then calls the API on the Pi directly over HTTPS.
+
+**CORS** makes that possible. The frontend and API are on different domains, so the Go API explicitly allows the Vercel origin and nothing else.
+
+**Sessions** are bearer tokens. Continuing as a guest calls `POST /auth/guest`, which creates a session row in Postgres and returns its token. The frontend stores it and sends it in the `Authorization` header on every request, and every invoice query on the Go side is scoped to that session's owner, so each visitor only ever sees their own data.
+
+**Google sign-in** runs entirely through the backend. The frontend just navigates to the API's `/auth/google/login`, and the API handles the whole OAuth handshake with Google: the consent screen, the code exchange, verifying the ID token. When it finishes, it redirects the browser back to the frontend with a session token, this one tied to a user row instead of an ephemeral guest. The frontend never touches Google credentials at all.
+
+---
+
+## Deployments
+
+Both halves ship on a push to `develop`, through two separate pipelines:
+
+- **Frontend**: Vercel's GitHub integration builds and deploys it automatically. No workflow to write or maintain.
+- **Backend**: the same pipeline from my [last post](/blog/raspberry-pi-server). GitHub Actions cross-compiles the Go binary for `linux/arm64`, joins my private **Tailscale** network, SSHes into the Pi, swaps the binary, and restarts the systemd service.
+
+Total hosting cost for all of it: zero!
 
 ---
 
 ## Source Code
 
-- [invoiceApp](https://github.com/tyrellcurry/invoiceApp) (React/Go invoicing app, `backend/deploy/` has the actual Pi deploy tooling)
-- [pi-portfolio-server](https://github.com/tyrellcurry/pi-portfolio-server) (the Go server this site runs on, source of the deploy pattern I reused)
+- [invoiceApp](https://github.com/tyrellcurry/invoiceApp) (the app, with the Pi deploy tooling in `backend/deploy/`)
+- [pi-portfolio-server](https://github.com/tyrellcurry/pi-portfolio-server) (the Go server this site runs on, and the source of the deploy pattern)

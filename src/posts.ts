@@ -8,7 +8,7 @@ export interface BlogPost {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "free-full-stack-hosting",
-    title: "I Hosted a Full-Stack App for Free on Vercel and My Raspberry Pi",
+    title: "Hosting a Full-Stack App for Free on Vercel and My Raspberry Pi",
     date: "2026-08-08",
     displayDate: "August 8th, 2026",
   },
